@@ -4,7 +4,7 @@
 
     <groupId>com.coveo</groupId>
     <artifactId>fmt-maven-plugin</artifactId>
-    <version>2.10-SNAPSHOT</version>
+    <version>2.10.J1</version>
     <packaging>maven-plugin</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
@@ -48,16 +48,16 @@
         <url>http://github.com/coveo/fmt-maven-plugin</url>
     </scm>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
+<!--    <distributionManagement>-->
+<!--        <snapshotRepository>-->
+<!--            <id>ossrh</id>-->
+<!--            <url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--        </snapshotRepository>-->
+<!--        <repository>-->
+<!--            <id>ossrh</id>-->
+<!--            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>-->
+<!--        </repository>-->
+<!--    </distributionManagement>-->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -78,7 +78,7 @@
         <dependency>
             <groupId>com.google.googlejavaformat</groupId>
             <artifactId>google-java-format</artifactId>
-            <version>1.7</version>
+            <version>1.8.J1</version>
         </dependency>
 
         <dependency>
@@ -224,5 +224,18 @@
             </build>
         </profile>
     </profiles>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>canopy-nexus</id>
+            <name>Canopy Jenkins Snapshots</name>
+            <url>https://nexus.canopy.engineering/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>canopy-nexus</id>
+            <name>Canopy Jenkins Releases</name>
+            <url>https://nexus.canopy.engineering/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
 
 </project>
